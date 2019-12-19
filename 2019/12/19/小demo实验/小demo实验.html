@@ -1,0 +1,389 @@
+<h1 id="s小demo实验"><a href="#s小demo实验" class="headerlink" title="s小demo实验"></a>s小demo实验</h1><p>之前因为没有记笔记导致很多知识都忘了，这也是看视频教学的坏处之一，所以我打算这次看文档解决</p>
+<p>[TOC]</p>
+<h2 id="vue-cli"><a href="#vue-cli" class="headerlink" title="vue-cli"></a>vue-cli</h2><p>先下载vue-cli，它是基于webpack开发的脚手架工具</p>
+<pre><code>npm install -g @vue/cli
+# OR
+yarn global add @vue/cli</code></pre><p>之后用检查版本的指令来确保安装成功</p>
+<pre><code>vue --version</code></pre><p>ok,如果有结果那就是成功了，我们在项目目录下使用</p>
+<pre><code>$ vue init webpack studentManageSystem //vue-cli 2x版本
+$vue create studentManageSystem //新版本</code></pre><p><img src="%E5%B0%8Fdemo%E5%AE%9E%E9%AA%8C/image-20191202105452058.png" alt="image-20191202105452058"></p>
+<p>PWA以后再试水，我们把好用的弄上，其实我都在想用了ts似乎不用babel了</p>
+<p><img src="%E5%B0%8Fdemo%E5%AE%9E%E9%AA%8C/image-20191202105910841.png" alt="image-20191202105910841"></p>
+<p>scss就选择轻量级的nodesass好了，自此，一个vue项目就搭建好了。之前我是使用的老版本脚手架，感觉新版本确实预加了很多好用的东西，特别是ts。</p>
+<p>先看看package.json里的东西</p>
+<pre><code class="json">{
+  <span class="attr">"name"</span>: <span class="string">"student-manage"</span>,
+  <span class="attr">"version"</span>: <span class="string">"0.1.0"</span>,
+  <span class="attr">"private"</span>: <span class="literal">true</span>,
+  <span class="attr">"scripts"</span>: {
+    <span class="attr">"dev"</span>: <span class="string">"vue-cli-service serve"</span>,<span class="comment">//先果断改成dev</span>
+    <span class="attr">"build"</span>: <span class="string">"vue-cli-service build"</span>
+  },
+  <span class="attr">"dependencies"</span>: {
+    <span class="attr">"core-js"</span>: <span class="string">"^3.4.3"</span>,
+    <span class="attr">"vue"</span>: <span class="string">"^2.6.10"</span>,
+    <span class="attr">"vue-class-component"</span>: <span class="string">"^7.0.2"</span>,
+    <span class="attr">"vue-property-decorator"</span>: <span class="string">"^8.3.0"</span>,<span class="comment">//这个是支持ts的插件</span>
+    <span class="attr">"vue-router"</span>: <span class="string">"^3.1.3"</span>,<span class="comment">//路由插件</span>
+    <span class="attr">"vuex"</span>: <span class="string">"^3.1.2"</span>
+  },
+  <span class="attr">"devDependencies"</span>: {
+    <span class="attr">"@vue/cli-plugin-babel"</span>: <span class="string">"^4.1.0"</span>,
+    <span class="attr">"@vue/cli-plugin-router"</span>: <span class="string">"^4.1.0"</span>,
+    <span class="attr">"@vue/cli-plugin-typescript"</span>: <span class="string">"^4.1.0"</span>,
+    <span class="attr">"@vue/cli-plugin-vuex"</span>: <span class="string">"^4.1.0"</span>,
+    <span class="attr">"@vue/cli-service"</span>: <span class="string">"^4.1.0"</span>,
+    <span class="attr">"node-sass"</span>: <span class="string">"^4.12.0"</span>,
+    <span class="attr">"sass-loader"</span>: <span class="string">"^8.0.0"</span>,
+    <span class="attr">"typescript"</span>: <span class="string">"~3.5.3"</span>,
+    <span class="attr">"vue-template-compiler"</span>: <span class="string">"^2.6.10"</span>
+  }
+}</code></pre>
+<p>再看看ts的配置文件</p>
+<pre><code class="json">{
+  <span class="attr">"compilerOptions"</span>: {
+    <span class="attr">"target"</span>: <span class="string">"es5"</span>,<span class="comment">//官方配置是esnext，这里改成了es5，ts默认配置嘛</span>
+    <span class="attr">"module"</span>: <span class="string">"esnext"</span>,
+    <span class="attr">"strict"</span>: <span class="literal">true</span>,
+    <span class="attr">"jsx"</span>: <span class="string">"preserve"</span>,
+    <span class="attr">"importHelpers"</span>: <span class="literal">true</span>,
+    <span class="attr">"moduleResolution"</span>: <span class="string">"node"</span>,
+    <span class="attr">"experimentalDecorators"</span>: <span class="literal">true</span>,
+    <span class="attr">"esModuleInterop"</span>: <span class="literal">true</span>,
+    <span class="attr">"allowSyntheticDefaultImports"</span>: <span class="literal">true</span>,
+    <span class="attr">"sourceMap"</span>: <span class="literal">true</span>,
+    <span class="attr">"baseUrl"</span>: <span class="string">"."</span>,
+    <span class="attr">"types"</span>: [
+      <span class="string">"webpack-env"</span>
+    ],
+    <span class="attr">"paths"</span>: {
+      <span class="attr">"@/*"</span>: [
+        <span class="string">"src/*"</span>
+      ]
+    },
+    <span class="attr">"lib"</span>: [
+      <span class="string">"esnext"</span>,
+      <span class="string">"dom"</span>,
+      <span class="string">"dom.iterable"</span>,
+      <span class="string">"scripthost"</span>
+    ]
+  },
+  <span class="attr">"include"</span>: [
+    <span class="string">"src/**/*.ts"</span>,
+    <span class="string">"src/**/*.tsx"</span>,
+    <span class="string">"src/**/*.vue"</span>,
+    <span class="string">"tests/**/*.ts"</span>,
+    <span class="string">"tests/**/*.tsx"</span>
+  ],
+  <span class="attr">"exclude"</span>: [
+    <span class="string">"node_modules"</span>
+  ]
+}
+</code></pre>
+<p>本来想用ui框架的，后来觉得都大同小异，我还是锻炼一下自己的基本功把</p>
+<h2 id="项目结构"><a href="#项目结构" class="headerlink" title="项目结构"></a>项目结构</h2><p>初步配置后搭了一下项目结构</p>
+<p><img src="%E5%B0%8Fdemo%E5%AE%9E%E9%AA%8C/image-20191202164154187.png" alt="image-20191202164154187"></p>
+<p>layout是架构，而app-main是不同的路由的页面所在的部分；header是页头；footer是页脚，当然这个部分其实内容很少；sidebar是选项栏，这个项目其实不打算做选项栏的隐藏工作。</p>
+<p><img src="%E5%B0%8Fdemo%E5%AE%9E%E9%AA%8C/1490836341627016.jpg" alt="img"></p>
+<p><img src="%E5%B0%8Fdemo%E5%AE%9E%E9%AA%8C/1490836346734552.jpg" alt="img"></p>
+<p>大概ui应该是这样</p>
+<h3 id="搭建项目框架时对vue-router的使用感想"><a href="#搭建项目框架时对vue-router的使用感想" class="headerlink" title="搭建项目框架时对vue-router的使用感想"></a>搭建项目框架时对vue-router的使用感想</h3><p>之前学的时候看的视频，对vuerouter理解不深，现在终于搞懂了嵌套路由的作用。</p>
+<p>先来看看官方文档怎么描述的：</p>
+<pre><code class="js">&lt;div id=<span class="string">"app"</span>&gt;
+  &lt;router-view&gt;<span class="xml"><span class="tag">&lt;/<span class="name">router-view</span>&gt;</span></span>
+&lt;<span class="regexp">/div&gt;</span>
+<span class="regexp">const User = {</span>
+<span class="regexp">  template: `</span>
+<span class="regexp">    &lt;div class="user"&gt;</span>
+<span class="regexp">      &lt;h2&gt;User {{ $route.params.id }}&lt;/</span>h2&gt;
+      &lt;router-view&gt;<span class="xml"><span class="tag">&lt;/<span class="name">router-view</span>&gt;</span></span>
+    &lt;<span class="regexp">/div&gt;</span>
+<span class="regexp">  `</span>
+<span class="regexp">}</span>
+<span class="regexp">const router = new VueRouter({</span>
+<span class="regexp">  routes: [</span>
+<span class="regexp">    { path: '/user/:id', component: User,</span>
+<span class="regexp">      children: [</span>
+<span class="regexp">        {</span>
+<span class="regexp">          // 当 /user/:id/profile 匹配成功，</span>
+<span class="regexp">          // UserProfile 会被渲染在 User 的 &lt;router-view&gt; 中</span>
+<span class="regexp">          path: 'profile',</span>
+<span class="regexp">          component: UserProfile</span>
+<span class="regexp">        },</span>
+<span class="regexp">        {</span>
+<span class="regexp">          // 当 /user/:id/posts 匹配成功</span>
+<span class="regexp">          // UserPosts 会被渲染在 User 的 &lt;router-view&gt; 中</span>
+<span class="regexp">          path: 'posts',</span>
+<span class="regexp">          component: UserPosts</span>
+<span class="regexp">        }</span>
+<span class="regexp">      ]</span>
+<span class="regexp">    }</span>
+<span class="regexp">  ]</span>
+<span class="regexp">})</span></code></pre>
+<p>可以看到，子路由的页面是被镶嵌到主路由里面的，所以如果切换子路由主路由所显示的界面是不会重新更新的，而且子路由也会继承主路由的路径。</p>
+<p>在本项目中，路由结构采用以下结构，做了一些重定向，</p>
+<pre><code class="js"><span class="keyword">import</span> Layout <span class="keyword">from</span> <span class="string">'@/views/layout/Layout.vue'</span>
+<span class="keyword">const</span> routes = [
+  {
+    path: <span class="string">'/404'</span>,
+    name: <span class="string">'404'</span>,
+    component: <span class="function"><span class="params">()</span> =&gt;</span> <span class="keyword">import</span>(<span class="string">'@/views/404.vue'</span>)
+  },
+  {
+    path: <span class="string">'*'</span>,
+    redirect: <span class="string">'/404'</span>
+  },
+  {
+    path: <span class="string">''</span>,
+    component: Layout,
+    redirect: <span class="string">'/home'</span>,
+    children: [
+      {
+        path: <span class="string">'home'</span>,
+        name: <span class="string">'home'</span>,
+        component: <span class="function"><span class="params">()</span> =&gt;</span> <span class="keyword">import</span>(<span class="string">'@/views/home/index.vue'</span>)
+      },
+    ]
+  }
+]</code></pre>
+<h2 id="vue-property-decorator初试"><a href="#vue-property-decorator初试" class="headerlink" title="vue-property-decorator初试"></a>vue-property-decorator初试</h2><p>其实不管是用vue-property-decorator还是用scss都是为了让项目的结构更加清晰，便于维护，代码更加优美。</p>
+<p><a href="https://www.npmjs.com/package/vue-property-decorator这是vue-property-decorator的npm官网，学习学习。" target="_blank" rel="noopener">https://www.npmjs.com/package/vue-property-decorator这是vue-property-decorator的npm官网，学习学习。</a></p>
+<p>首先第一感觉是必须要加上</p>
+<pre><code class="js"><span class="keyword">import</span> { Vue, Component, Prop } <span class="keyword">from</span> <span class="string">'vue-property-decorator'</span></code></pre>
+<p>然后传统的export default变成了</p>
+<pre><code class="js">@Component
+<span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> *** <span class="keyword">extends</span> <span class="title">Vue</span> </span>{
+    ...
+}</code></pre>
+<p><strong>props</strong>变化也很大</p>
+<pre><code class="tsx">import { Vue, Component, Prop } from &apos;vue-property-decorator&apos;
+
+@Component
+export default class YourComponent extends Vue {
+  @Prop(Number) readonly propA: number | undefined
+  @Prop({ default: &apos;default value&apos; }) readonly propB!: string
+  @Prop([String, Boolean]) readonly propC: string | boolean | undefined
+}</code></pre>
+<pre><code class="js"><span class="keyword">export</span> <span class="keyword">default</span> {
+  props: {
+    propA: {
+      type: <span class="built_in">Number</span>
+    },
+    propB: {
+      <span class="keyword">default</span>: <span class="string">'default value'</span>
+    },
+    propC: {
+      type: [<span class="built_in">String</span>, <span class="built_in">Boolean</span>]
+    }
+  }
+}</code></pre>
+<p>这里需要注意的是在@Prop时应该加上ts的类型修饰符<strong>！</strong>以防编译器报错</p>
+<p><strong>watch</strong>也类似</p>
+<pre><code class="js"><span class="keyword">import</span> { Vue, Component, Watch } <span class="keyword">from</span> <span class="string">'vue-property-decorator'</span>
+
+@Component
+<span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">YourComponent</span> <span class="keyword">extends</span> <span class="title">Vue</span> </span>{
+  @Watch(<span class="string">'child'</span>)
+  onChildChanged(val: string, <span class="attr">oldVal</span>: string) {}
+
+  @Watch(<span class="string">'person'</span>, { <span class="attr">immediate</span>: <span class="literal">true</span>, <span class="attr">deep</span>: <span class="literal">true</span> })
+  onPersonChanged1(val: Person, <span class="attr">oldVal</span>: Person) {}
+
+  @Watch(<span class="string">'person'</span>)
+  onPersonChanged2(val: Person, <span class="attr">oldVal</span>: Person) {}
+}</code></pre>
+<p>等同于</p>
+<pre><code class="js"><span class="keyword">export</span> <span class="keyword">default</span> {
+  watch: {
+    child: [
+      {
+        handler: <span class="string">'onChildChanged'</span>,
+        immediate: <span class="literal">false</span>,
+        deep: <span class="literal">false</span>
+      }
+    ],
+    person: [
+      {
+        handler: <span class="string">'onPersonChanged1'</span>,
+        immediate: <span class="literal">true</span>,
+        deep: <span class="literal">true</span>
+      },
+      {
+        handler: <span class="string">'onPersonChanged2'</span>,
+        immediate: <span class="literal">false</span>,
+        deep: <span class="literal">false</span>
+      }
+    ]
+  },
+  methods: {
+    onChildChanged(val, oldVal) {},
+    onPersonChanged1(val, oldVal) {},
+    onPersonChanged2(val, oldVal) {}
+  }
+}</code></pre>
+<p>vue中的<strong>data</strong>就直接在对象中以属性的方式存在，同样，<strong>methods</strong>也变成了方法</p>
+<p>感觉这也算对项目结构的优化吧，毕竟脚手架中和传统面向对象的思维差距太大。</p>
+<p><strong>computed</strong>是在vue-class-component里面的</p>
+<pre><code class="js"><span class="comment">// computed</span>
+  <span class="keyword">get</span> computedMsg () {
+    <span class="keyword">return</span> <span class="string">'computed '</span> + <span class="keyword">this</span>.msg
+  }</code></pre>
+<p>其实看了ts转换成的es5代码后发现类似的计算属性都是通过<strong>Object.definePropety()</strong>实现的，这个在这里就不多做赘述。</p>
+<h2 id="css相关"><a href="#css相关" class="headerlink" title="css相关"></a>css相关</h2><p>css3渐变色的使用</p>
+<ol>
+<li>从上到下</li>
+</ol>
+<pre><code class="css"><span class="selector-id">#grad</span> {
+    <span class="attribute">background-image</span>: <span class="built_in">linear-gradient</span>(#e66465, #9198e5);
+}</code></pre>
+<ol start="2">
+<li>从左到右</li>
+</ol>
+<pre><code class="css"><span class="selector-id">#grad</span> {
+  <span class="attribute">height</span>: <span class="number">200px</span>;
+  <span class="attribute">background-image</span>: <span class="built_in">linear-gradient</span>(to right, red , yellow);
+}</code></pre>
+<ol start="3">
+<li>对角</li>
+</ol>
+<pre><code class="css"><span class="selector-id">#grad</span> {
+  <span class="attribute">height</span>: <span class="number">200px</span>;
+  <span class="attribute">background-image</span>: <span class="built_in">linear-gradient</span>(to bottom right, red, yellow);
+}</code></pre>
+<ol start="4">
+<li>使用角度</li>
+</ol>
+<pre><code class="css"><span class="selector-id">#grad</span> {
+  <span class="attribute">background-image</span>: <span class="built_in">linear-gradient</span>(-90deg, red, yellow);
+}</code></pre>
+<h2 id="数据库设计"><a href="#数据库设计" class="headerlink" title="数据库设计"></a>数据库设计</h2><p><img src="%E5%B0%8Fdemo%E5%AE%9E%E9%AA%8C/image-20191218000714161.png" alt="image-20191218000714161"></p>
+<h3 id="student-info"><a href="#student-info" class="headerlink" title="student_info"></a>student_info</h3><table>
+<thead>
+<tr>
+<th align="center">属性</th>
+<th align="center">类型</th>
+<th align="center">特殊</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">student_id</td>
+<td align="center">char</td>
+<td align="center">primary key</td>
+<td align="center">学号</td>
+</tr>
+<tr>
+<td align="center">student_name</td>
+<td align="center">varchar</td>
+<td align="center">not null</td>
+<td align="center">名字</td>
+</tr>
+<tr>
+<td align="center">student_sex</td>
+<td align="center">char</td>
+<td align="center">‘男’或’女’</td>
+<td align="center">性别</td>
+</tr>
+<tr>
+<td align="center">student_birthday</td>
+<td align="center">datetime</td>
+<td align="center"></td>
+<td align="center">出生日期</td>
+</tr>
+<tr>
+<td align="center">student_introduce</td>
+<td align="center">char</td>
+<td align="center"></td>
+<td align="center">学生介绍</td>
+</tr>
+<tr>
+<td align="center">class_id</td>
+<td align="center">char</td>
+<td align="center">班级表的外键</td>
+<td align="center">所属班级</td>
+</tr>
+</tbody></table>
+<h3 id="class"><a href="#class" class="headerlink" title="class"></a>class</h3><table>
+<thead>
+<tr>
+<th align="center">属性</th>
+<th align="center">类型</th>
+<th align="center">特殊</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">class_id</td>
+<td align="center">char</td>
+<td align="center">primary key</td>
+<td align="center">班级编号</td>
+</tr>
+<tr>
+<td align="center">instructor_id</td>
+<td align="center">char</td>
+<td align="center">辅导员表的外键</td>
+<td align="center">所属的辅导员</td>
+</tr>
+<tr>
+<td align="center">class_name</td>
+<td align="center">varchar</td>
+<td align="center">not null</td>
+<td align="center">班级名称</td>
+</tr>
+<tr>
+<td align="center">major_id</td>
+<td align="center">char</td>
+<td align="center">专业表的外键</td>
+<td align="center">所属专业</td>
+</tr>
+</tbody></table>
+<h3 id="major"><a href="#major" class="headerlink" title="major"></a>major</h3><table>
+<thead>
+<tr>
+<th align="center">属性</th>
+<th align="center">类型</th>
+<th align="center">特殊</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">major_id</td>
+<td align="center">char</td>
+<td align="center">primary key</td>
+<td align="center">专业编号</td>
+</tr>
+<tr>
+<td align="center">major_name</td>
+<td align="center">varchar</td>
+<td align="center">not null</td>
+<td align="center">专业名称</td>
+</tr>
+<tr>
+<td align="center">dept_id</td>
+<td align="center">char</td>
+<td align="center">学院表的外键</td>
+<td align="center">所属学院</td>
+</tr>
+</tbody></table>
+<h3 id="instructor"><a href="#instructor" class="headerlink" title="instructor"></a>instructor</h3><table>
+<thead>
+<tr>
+<th align="center">属性</th>
+<th align="center">类型</th>
+<th align="center">特殊</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">instructor_id</td>
+<td align="center">char</td>
+<td align="center">primary key</td>
+<td align="center">辅导员id</td>
+</tr>
+<tr>
+<td align="center">instructor_name</td>
+<td align="center">varchar</td>
+<td align="center">not null</td>
+<td align="center">辅导员名字</td>
+</tr>
+</tbody></table>

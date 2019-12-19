@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>小demo实验 | 个人博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="s小demo实验之前因为没有记笔记导致很多知识都忘了，这也是看视频教学的坏处之一，所以我打算这次看文档解决 [TOC] vue-cli先下载vue-cli，它是基于webpack开发的脚手架工具 123npm install -g @vue&#x2F;cli# ORyarn global add @vue&#x2F;cli  之后用检查版本的指令来确保安装成功 1vue --version  ok,如果有结果那就是成">
+<meta property="og:type" content="article">
+<meta property="og:title" content="小demo实验">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;19&#x2F;%E5%B0%8Fdemo%E5%AE%9E%E9%AA%8C&#x2F;">
+<meta property="og:site_name" content="个人博客">
+<meta property="og:description" content="s小demo实验之前因为没有记笔记导致很多知识都忘了，这也是看视频教学的坏处之一，所以我打算这次看文档解决 [TOC] vue-cli先下载vue-cli，它是基于webpack开发的脚手架工具 123npm install -g @vue&#x2F;cli# ORyarn global add @vue&#x2F;cli  之后用检查版本的指令来确保安装成功 1vue --version  ok,如果有结果那就是成">
+<meta property="og:locale" content="cn">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;19&#x2F;%E5%B0%8Fdemo%E5%AE%9E%E9%AA%8C&#x2F;image-20191202105452058.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;19&#x2F;%E5%B0%8Fdemo%E5%AE%9E%E9%AA%8C&#x2F;image-20191202105910841.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;19&#x2F;%E5%B0%8Fdemo%E5%AE%9E%E9%AA%8C&#x2F;image-20191202164154187.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;19&#x2F;%E5%B0%8Fdemo%E5%AE%9E%E9%AA%8C&#x2F;1490836341627016.jpg">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;19&#x2F;%E5%B0%8Fdemo%E5%AE%9E%E9%AA%8C&#x2F;1490836346734552.jpg">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;19&#x2F;%E5%B0%8Fdemo%E5%AE%9E%E9%AA%8C&#x2F;image-20191218000714161.png">
+<meta property="og:updated_time" content="2019-12-19T03:10:26.406Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;19&#x2F;%E5%B0%8Fdemo%E5%AE%9E%E9%AA%8C&#x2F;image-20191202105452058.png">
+  
+    <link rel="alternate" href="/atom.xml" title="个人博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">个人博客</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-小demo实验" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/12/19/%E5%B0%8Fdemo%E5%AE%9E%E9%AA%8C/" class="article-date">
+  <time datetime="2019-12-19T03:17:06.230Z" itemprop="datePublished">2019-12-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      小demo实验
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="s小demo实验"><a href="#s小demo实验" class="headerlink" title="s小demo实验"></a>s小demo实验</h1><p>之前因为没有记笔记导致很多知识都忘了，这也是看视频教学的坏处之一，所以我打算这次看文档解决</p>
+<p>[TOC]</p>
+<h2 id="vue-cli"><a href="#vue-cli" class="headerlink" title="vue-cli"></a>vue-cli</h2><p>先下载vue-cli，它是基于webpack开发的脚手架工具</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm install -g @vue/cli</span><br><span class="line"># OR</span><br><span class="line">yarn global add @vue/cli</span><br></pre></td></tr></table></figure>
+
+<p>之后用检查版本的指令来确保安装成功</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vue --version</span><br></pre></td></tr></table></figure>
+
+<p>ok,如果有结果那就是成功了，我们在项目目录下使用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ vue init webpack studentManageSystem //vue-cli 2x版本</span><br><span class="line">$vue create studentManageSystem //新版本</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2019/12/19/%E5%B0%8Fdemo%E5%AE%9E%E9%AA%8C/image-20191202105452058.png" alt="image-20191202105452058"></p>
+<p>PWA以后再试水，我们把好用的弄上，其实我都在想用了ts似乎不用babel了</p>
+<p><img src="/2019/12/19/%E5%B0%8Fdemo%E5%AE%9E%E9%AA%8C/image-20191202105910841.png" alt="image-20191202105910841"></p>
+<p>scss就选择轻量级的nodesass好了，自此，一个vue项目就搭建好了。之前我是使用的老版本脚手架，感觉新版本确实预加了很多好用的东西，特别是ts。</p>
+<p>先看看package.json里的东西</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"name"</span>: <span class="string">"student-manage"</span>,</span><br><span class="line">  <span class="attr">"version"</span>: <span class="string">"0.1.0"</span>,</span><br><span class="line">  <span class="attr">"private"</span>: <span class="literal">true</span>,</span><br><span class="line">  <span class="attr">"scripts"</span>: &#123;</span><br><span class="line">    <span class="attr">"dev"</span>: <span class="string">"vue-cli-service serve"</span>,<span class="comment">//先果断改成dev</span></span><br><span class="line">    <span class="attr">"build"</span>: <span class="string">"vue-cli-service build"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">"dependencies"</span>: &#123;</span><br><span class="line">    <span class="attr">"core-js"</span>: <span class="string">"^3.4.3"</span>,</span><br><span class="line">    <span class="attr">"vue"</span>: <span class="string">"^2.6.10"</span>,</span><br><span class="line">    <span class="attr">"vue-class-component"</span>: <span class="string">"^7.0.2"</span>,</span><br><span class="line">    <span class="attr">"vue-property-decorator"</span>: <span class="string">"^8.3.0"</span>,<span class="comment">//这个是支持ts的插件</span></span><br><span class="line">    <span class="attr">"vue-router"</span>: <span class="string">"^3.1.3"</span>,<span class="comment">//路由插件</span></span><br><span class="line">    <span class="attr">"vuex"</span>: <span class="string">"^3.1.2"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">"devDependencies"</span>: &#123;</span><br><span class="line">    <span class="attr">"@vue/cli-plugin-babel"</span>: <span class="string">"^4.1.0"</span>,</span><br><span class="line">    <span class="attr">"@vue/cli-plugin-router"</span>: <span class="string">"^4.1.0"</span>,</span><br><span class="line">    <span class="attr">"@vue/cli-plugin-typescript"</span>: <span class="string">"^4.1.0"</span>,</span><br><span class="line">    <span class="attr">"@vue/cli-plugin-vuex"</span>: <span class="string">"^4.1.0"</span>,</span><br><span class="line">    <span class="attr">"@vue/cli-service"</span>: <span class="string">"^4.1.0"</span>,</span><br><span class="line">    <span class="attr">"node-sass"</span>: <span class="string">"^4.12.0"</span>,</span><br><span class="line">    <span class="attr">"sass-loader"</span>: <span class="string">"^8.0.0"</span>,</span><br><span class="line">    <span class="attr">"typescript"</span>: <span class="string">"~3.5.3"</span>,</span><br><span class="line">    <span class="attr">"vue-template-compiler"</span>: <span class="string">"^2.6.10"</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>再看看ts的配置文件</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"compilerOptions"</span>: &#123;</span><br><span class="line">    <span class="attr">"target"</span>: <span class="string">"es5"</span>,<span class="comment">//官方配置是esnext，这里改成了es5，ts默认配置嘛</span></span><br><span class="line">    <span class="attr">"module"</span>: <span class="string">"esnext"</span>,</span><br><span class="line">    <span class="attr">"strict"</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">"jsx"</span>: <span class="string">"preserve"</span>,</span><br><span class="line">    <span class="attr">"importHelpers"</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">"moduleResolution"</span>: <span class="string">"node"</span>,</span><br><span class="line">    <span class="attr">"experimentalDecorators"</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">"esModuleInterop"</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">"allowSyntheticDefaultImports"</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">"sourceMap"</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">"baseUrl"</span>: <span class="string">"."</span>,</span><br><span class="line">    <span class="attr">"types"</span>: [</span><br><span class="line">      <span class="string">"webpack-env"</span></span><br><span class="line">    ],</span><br><span class="line">    <span class="attr">"paths"</span>: &#123;</span><br><span class="line">      <span class="attr">"@/*"</span>: [</span><br><span class="line">        <span class="string">"src/*"</span></span><br><span class="line">      ]</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">"lib"</span>: [</span><br><span class="line">      <span class="string">"esnext"</span>,</span><br><span class="line">      <span class="string">"dom"</span>,</span><br><span class="line">      <span class="string">"dom.iterable"</span>,</span><br><span class="line">      <span class="string">"scripthost"</span></span><br><span class="line">    ]</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">"include"</span>: [</span><br><span class="line">    <span class="string">"src/**/*.ts"</span>,</span><br><span class="line">    <span class="string">"src/**/*.tsx"</span>,</span><br><span class="line">    <span class="string">"src/**/*.vue"</span>,</span><br><span class="line">    <span class="string">"tests/**/*.ts"</span>,</span><br><span class="line">    <span class="string">"tests/**/*.tsx"</span></span><br><span class="line">  ],</span><br><span class="line">  <span class="attr">"exclude"</span>: [</span><br><span class="line">    <span class="string">"node_modules"</span></span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>本来想用ui框架的，后来觉得都大同小异，我还是锻炼一下自己的基本功把</p>
+<h2 id="项目结构"><a href="#项目结构" class="headerlink" title="项目结构"></a>项目结构</h2><p>初步配置后搭了一下项目结构</p>
+<p><img src="/2019/12/19/%E5%B0%8Fdemo%E5%AE%9E%E9%AA%8C/image-20191202164154187.png" alt="image-20191202164154187"></p>
+<p>layout是架构，而app-main是不同的路由的页面所在的部分；header是页头；footer是页脚，当然这个部分其实内容很少；sidebar是选项栏，这个项目其实不打算做选项栏的隐藏工作。</p>
+<p><img src="/2019/12/19/%E5%B0%8Fdemo%E5%AE%9E%E9%AA%8C/1490836341627016.jpg" alt="img"></p>
+<p><img src="/2019/12/19/%E5%B0%8Fdemo%E5%AE%9E%E9%AA%8C/1490836346734552.jpg" alt="img"></p>
+<p>大概ui应该是这样</p>
+<h3 id="搭建项目框架时对vue-router的使用感想"><a href="#搭建项目框架时对vue-router的使用感想" class="headerlink" title="搭建项目框架时对vue-router的使用感想"></a>搭建项目框架时对vue-router的使用感想</h3><p>之前学的时候看的视频，对vuerouter理解不深，现在终于搞懂了嵌套路由的作用。</p>
+<p>先来看看官方文档怎么描述的：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=<span class="string">"app"</span>&gt;</span><br><span class="line">  &lt;router-view&gt;<span class="xml"><span class="tag">&lt;/<span class="name">router-view</span>&gt;</span></span></span><br><span class="line">&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">const User = &#123;</span></span><br><span class="line"><span class="regexp">  template: `</span></span><br><span class="line"><span class="regexp">    &lt;div class="user"&gt;</span></span><br><span class="line"><span class="regexp">      &lt;h2&gt;User &#123;&#123; $route.params.id &#125;&#125;&lt;/</span>h2&gt;</span><br><span class="line">      &lt;router-view&gt;<span class="xml"><span class="tag">&lt;/<span class="name">router-view</span>&gt;</span></span></span><br><span class="line">    &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">  `</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp">const router = new VueRouter(&#123;</span></span><br><span class="line"><span class="regexp">  routes: [</span></span><br><span class="line"><span class="regexp">    &#123; path: '/user/:id', component: User,</span></span><br><span class="line"><span class="regexp">      children: [</span></span><br><span class="line"><span class="regexp">        &#123;</span></span><br><span class="line"><span class="regexp">          // 当 /user/:id/profile 匹配成功，</span></span><br><span class="line"><span class="regexp">          // UserProfile 会被渲染在 User 的 &lt;router-view&gt; 中</span></span><br><span class="line"><span class="regexp">          path: 'profile',</span></span><br><span class="line"><span class="regexp">          component: UserProfile</span></span><br><span class="line"><span class="regexp">        &#125;,</span></span><br><span class="line"><span class="regexp">        &#123;</span></span><br><span class="line"><span class="regexp">          // 当 /user/:id/posts 匹配成功</span></span><br><span class="line"><span class="regexp">          // UserPosts 会被渲染在 User 的 &lt;router-view&gt; 中</span></span><br><span class="line"><span class="regexp">          path: 'posts',</span></span><br><span class="line"><span class="regexp">          component: UserPosts</span></span><br><span class="line"><span class="regexp">        &#125;</span></span><br><span class="line"><span class="regexp">      ]</span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br><span class="line"><span class="regexp">  ]</span></span><br><span class="line"><span class="regexp">&#125;)</span></span><br></pre></td></tr></table></figure>
+
+<p>可以看到，子路由的页面是被镶嵌到主路由里面的，所以如果切换子路由主路由所显示的界面是不会重新更新的，而且子路由也会继承主路由的路径。</p>
+<p>在本项目中，路由结构采用以下结构，做了一些重定向，</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Layout <span class="keyword">from</span> <span class="string">'@/views/layout/Layout.vue'</span></span><br><span class="line"><span class="keyword">const</span> routes = [</span><br><span class="line">  &#123;</span><br><span class="line">    path: <span class="string">'/404'</span>,</span><br><span class="line">    name: <span class="string">'404'</span>,</span><br><span class="line">    component: <span class="function"><span class="params">()</span> =&gt;</span> <span class="keyword">import</span>(<span class="string">'@/views/404.vue'</span>)</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    path: <span class="string">'*'</span>,</span><br><span class="line">    redirect: <span class="string">'/404'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    path: <span class="string">''</span>,</span><br><span class="line">    component: Layout,</span><br><span class="line">    redirect: <span class="string">'/home'</span>,</span><br><span class="line">    children: [</span><br><span class="line">      &#123;</span><br><span class="line">        path: <span class="string">'home'</span>,</span><br><span class="line">        name: <span class="string">'home'</span>,</span><br><span class="line">        component: <span class="function"><span class="params">()</span> =&gt;</span> <span class="keyword">import</span>(<span class="string">'@/views/home/index.vue'</span>)</span><br><span class="line">      &#125;,</span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="vue-property-decorator初试"><a href="#vue-property-decorator初试" class="headerlink" title="vue-property-decorator初试"></a>vue-property-decorator初试</h2><p>其实不管是用vue-property-decorator还是用scss都是为了让项目的结构更加清晰，便于维护，代码更加优美。</p>
+<p><a href="https://www.npmjs.com/package/vue-property-decorator这是vue-property-decorator的npm官网，学习学习。" target="_blank" rel="noopener">https://www.npmjs.com/package/vue-property-decorator这是vue-property-decorator的npm官网，学习学习。</a></p>
+<p>首先第一感觉是必须要加上</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Vue, Component, Prop &#125; <span class="keyword">from</span> <span class="string">'vue-property-decorator'</span></span><br></pre></td></tr></table></figure>
+
+<p>然后传统的export default变成了</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">@Component</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> *** <span class="keyword">extends</span> <span class="title">Vue</span> </span>&#123;</span><br><span class="line">	...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>props</strong>变化也很大</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">import &#123; Vue, Component, Prop &#125; from &apos;vue-property-decorator&apos;</span><br><span class="line"> </span><br><span class="line">@Component</span><br><span class="line">export default class YourComponent extends Vue &#123;</span><br><span class="line">  @Prop(Number) readonly propA: number | undefined</span><br><span class="line">  @Prop(&#123; default: &apos;default value&apos; &#125;) readonly propB!: string</span><br><span class="line">  @Prop([String, Boolean]) readonly propC: string | boolean | undefined</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  props: &#123;</span><br><span class="line">    propA: &#123;</span><br><span class="line">      type: <span class="built_in">Number</span></span><br><span class="line">    &#125;,</span><br><span class="line">    propB: &#123;</span><br><span class="line">      <span class="keyword">default</span>: <span class="string">'default value'</span></span><br><span class="line">    &#125;,</span><br><span class="line">    propC: &#123;</span><br><span class="line">      type: [<span class="built_in">String</span>, <span class="built_in">Boolean</span>]</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这里需要注意的是在@Prop时应该加上ts的类型修饰符<strong>！</strong>以防编译器报错</p>
+<p><strong>watch</strong>也类似</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Vue, Component, Watch &#125; <span class="keyword">from</span> <span class="string">'vue-property-decorator'</span></span><br><span class="line"> </span><br><span class="line">@Component</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">YourComponent</span> <span class="keyword">extends</span> <span class="title">Vue</span> </span>&#123;</span><br><span class="line">  @Watch(<span class="string">'child'</span>)</span><br><span class="line">  onChildChanged(val: string, <span class="attr">oldVal</span>: string) &#123;&#125;</span><br><span class="line"> </span><br><span class="line">  @Watch(<span class="string">'person'</span>, &#123; <span class="attr">immediate</span>: <span class="literal">true</span>, <span class="attr">deep</span>: <span class="literal">true</span> &#125;)</span><br><span class="line">  onPersonChanged1(val: Person, <span class="attr">oldVal</span>: Person) &#123;&#125;</span><br><span class="line"> </span><br><span class="line">  @Watch(<span class="string">'person'</span>)</span><br><span class="line">  onPersonChanged2(val: Person, <span class="attr">oldVal</span>: Person) &#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>等同于</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  watch: &#123;</span><br><span class="line">    child: [</span><br><span class="line">      &#123;</span><br><span class="line">        handler: <span class="string">'onChildChanged'</span>,</span><br><span class="line">        immediate: <span class="literal">false</span>,</span><br><span class="line">        deep: <span class="literal">false</span></span><br><span class="line">      &#125;</span><br><span class="line">    ],</span><br><span class="line">    person: [</span><br><span class="line">      &#123;</span><br><span class="line">        handler: <span class="string">'onPersonChanged1'</span>,</span><br><span class="line">        immediate: <span class="literal">true</span>,</span><br><span class="line">        deep: <span class="literal">true</span></span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        handler: <span class="string">'onPersonChanged2'</span>,</span><br><span class="line">        immediate: <span class="literal">false</span>,</span><br><span class="line">        deep: <span class="literal">false</span></span><br><span class="line">      &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    onChildChanged(val, oldVal) &#123;&#125;,</span><br><span class="line">    onPersonChanged1(val, oldVal) &#123;&#125;,</span><br><span class="line">    onPersonChanged2(val, oldVal) &#123;&#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>vue中的<strong>data</strong>就直接在对象中以属性的方式存在，同样，<strong>methods</strong>也变成了方法</p>
+<p>感觉这也算对项目结构的优化吧，毕竟脚手架中和传统面向对象的思维差距太大。</p>
+<p><strong>computed</strong>是在vue-class-component里面的</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// computed</span></span><br><span class="line">  <span class="keyword">get</span> computedMsg () &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">'computed '</span> + <span class="keyword">this</span>.msg</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<p>其实看了ts转换成的es5代码后发现类似的计算属性都是通过<strong>Object.definePropety()</strong>实现的，这个在这里就不多做赘述。</p>
+<h2 id="css相关"><a href="#css相关" class="headerlink" title="css相关"></a>css相关</h2><p>css3渐变色的使用</p>
+<ol>
+<li>从上到下</li>
+</ol>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#grad</span> &#123;</span><br><span class="line">    <span class="attribute">background-image</span>: <span class="built_in">linear-gradient</span>(#e66465, #9198e5);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>从左到右</li>
+</ol>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#grad</span> &#123;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">  <span class="attribute">background-image</span>: <span class="built_in">linear-gradient</span>(to right, red , yellow);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>对角</li>
+</ol>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#grad</span> &#123;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">  <span class="attribute">background-image</span>: <span class="built_in">linear-gradient</span>(to bottom right, red, yellow);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>使用角度</li>
+</ol>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#grad</span> &#123;</span><br><span class="line">  <span class="attribute">background-image</span>: <span class="built_in">linear-gradient</span>(-90deg, red, yellow);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="数据库设计"><a href="#数据库设计" class="headerlink" title="数据库设计"></a>数据库设计</h2><p><img src="/2019/12/19/%E5%B0%8Fdemo%E5%AE%9E%E9%AA%8C/image-20191218000714161.png" alt="image-20191218000714161"></p>
+<h3 id="student-info"><a href="#student-info" class="headerlink" title="student_info"></a>student_info</h3><table>
+<thead>
+<tr>
+<th align="center">属性</th>
+<th align="center">类型</th>
+<th align="center">特殊</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">student_id</td>
+<td align="center">char</td>
+<td align="center">primary key</td>
+<td align="center">学号</td>
+</tr>
+<tr>
+<td align="center">student_name</td>
+<td align="center">varchar</td>
+<td align="center">not null</td>
+<td align="center">名字</td>
+</tr>
+<tr>
+<td align="center">student_sex</td>
+<td align="center">char</td>
+<td align="center">‘男’或’女’</td>
+<td align="center">性别</td>
+</tr>
+<tr>
+<td align="center">student_birthday</td>
+<td align="center">datetime</td>
+<td align="center"></td>
+<td align="center">出生日期</td>
+</tr>
+<tr>
+<td align="center">student_introduce</td>
+<td align="center">char</td>
+<td align="center"></td>
+<td align="center">学生介绍</td>
+</tr>
+<tr>
+<td align="center">class_id</td>
+<td align="center">char</td>
+<td align="center">班级表的外键</td>
+<td align="center">所属班级</td>
+</tr>
+</tbody></table>
+<h3 id="class"><a href="#class" class="headerlink" title="class"></a>class</h3><table>
+<thead>
+<tr>
+<th align="center">属性</th>
+<th align="center">类型</th>
+<th align="center">特殊</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">class_id</td>
+<td align="center">char</td>
+<td align="center">primary key</td>
+<td align="center">班级编号</td>
+</tr>
+<tr>
+<td align="center">instructor_id</td>
+<td align="center">char</td>
+<td align="center">辅导员表的外键</td>
+<td align="center">所属的辅导员</td>
+</tr>
+<tr>
+<td align="center">class_name</td>
+<td align="center">varchar</td>
+<td align="center">not null</td>
+<td align="center">班级名称</td>
+</tr>
+<tr>
+<td align="center">major_id</td>
+<td align="center">char</td>
+<td align="center">专业表的外键</td>
+<td align="center">所属专业</td>
+</tr>
+</tbody></table>
+<h3 id="major"><a href="#major" class="headerlink" title="major"></a>major</h3><table>
+<thead>
+<tr>
+<th align="center">属性</th>
+<th align="center">类型</th>
+<th align="center">特殊</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">major_id</td>
+<td align="center">char</td>
+<td align="center">primary key</td>
+<td align="center">专业编号</td>
+</tr>
+<tr>
+<td align="center">major_name</td>
+<td align="center">varchar</td>
+<td align="center">not null</td>
+<td align="center">专业名称</td>
+</tr>
+<tr>
+<td align="center">dept_id</td>
+<td align="center">char</td>
+<td align="center">学院表的外键</td>
+<td align="center">所属学院</td>
+</tr>
+</tbody></table>
+<h3 id="instructor"><a href="#instructor" class="headerlink" title="instructor"></a>instructor</h3><table>
+<thead>
+<tr>
+<th align="center">属性</th>
+<th align="center">类型</th>
+<th align="center">特殊</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">instructor_id</td>
+<td align="center">char</td>
+<td align="center">primary key</td>
+<td align="center">辅导员id</td>
+</tr>
+<tr>
+<td align="center">instructor_name</td>
+<td align="center">varchar</td>
+<td align="center">not null</td>
+<td align="center">辅导员名字</td>
+</tr>
+</tbody></table>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/12/19/%E5%B0%8Fdemo%E5%AE%9E%E9%AA%8C/" data-id="ck4c5m9r20002qsvk834i0ink" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2019/12/19/%E5%B0%8Fdemo%E5%AE%9E%E9%AA%8C/%E5%B0%8Fdemo%E5%AE%9E%E9%AA%8C/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">小demo实验/小demo实验</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">December 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">November 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/12/19/%E5%B0%8Fdemo%E5%AE%9E%E9%AA%8C/">小demo实验</a>
+          </li>
+        
+          <li>
+            <a href="/2019/12/19/%E5%B0%8Fdemo%E5%AE%9E%E9%AA%8C/%E5%B0%8Fdemo%E5%AE%9E%E9%AA%8C/">小demo实验/小demo实验</a>
+          </li>
+        
+          <li>
+            <a href="/2019/11/30/vscode%E7%BC%96%E8%AF%91c%E8%AF%AD%E8%A8%80/">vscode编译c语言</a>
+          </li>
+        
+          <li>
+            <a href="/2019/11/27/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1%E7%B3%BB%E7%BB%9F%E6%93%8D%E4%BD%9C%E6%89%8B%E5%86%8C/">毕业设计系统操作手册</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 disturbwe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
